@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://bootswatch.com/sandstone/bootstrap.css">
+</head>
+<body>
+<div class = "todo_start">
+<button class="btn btn-default btn-lg btn-block" style="font-size: 40px ; font-style: italic; background-color :cadetblue">List It UP.....</button> </br> </br>
+</div>
+<div class = "new_item">
+<button class="btn btn-default btn-lg btn-block" style="font-size: 40px ; font-style: italic; background-color :cadetblue">+ NEW To DO</button> </br> </br>
+</div>
+<div class = "login">
+  <center>
+ <button class="btn btn-primary btn-lg" style="font-size: 40px ">   Login    </button> </br> </br>
+  </center>
+</div>
+<div class = "sign_up">
+  <center>
+ <a href="#" class="btn btn-primary btn-lg" style="font-size: 40px ">   Sign Up    </a> </br> </br>
+  </center>
+</div>
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4>Warning!</h4>
+  <p style = "font-size : 20px">Before posting make Sure You really dont have the missing item. <a href="#" class="alert-link"></a>.</p>
+</div>
+
+
+{% load static %}
+<script src="{% static  'todoapp/jquery-3.2.1.js' %}"></script>
+<script src="{% static 'todoapp/jquery.tmpl.min.js' %}"> </script>
+
+<script>
+  	$(document).ready(function(){
+      $(".new_item").click(function(){
+
+                $.get("/todoapp/lists/create_list.html", function(template) {
+              $(".new_item").html(template)
+});
+      });
+
+   $(".login").click(function(){
+
+                $.get("/auth/login", function(template) {
+              $(".login").html(template)
+});
+
+});
+    });
+</script>
+</body>
+
+</html>

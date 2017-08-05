@@ -1,0 +1,10 @@
+
+{% if todolists %}
+     <h1 style="color:blue" > Your Lists </h1>
+    {% for i in todolists  %}
+
+    <li> <a href="{% url 'todoapp:getdata' i.id %}"><b> {{ i.name }}</b> </a></li>
+    {% endfor %}
+{% else %}
+    <h2>No data found</h2>
+{% endif %}

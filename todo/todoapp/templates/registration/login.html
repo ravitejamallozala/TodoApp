@@ -1,0 +1,8 @@
+
+    <form method="post">
+        {% csrf_token %}
+        <!--<input type="hidden" name="csrfmiddlewaretoken" value="uEUppf9tAlqBDnQRQQyeURKyul80FBsnAbHIblGmjwNvzSkyTTtGwPqLmSl35lfO">-->
+        <p><label for="id_username">Username:</label> <input type="text" name="username" autofocus="" required="" id="id_username" maxlength="254"></p>
+<p><label for="id_password">Password:</label> <input type="password" name="password" required="" id="id_password"></p>
+        <button action="submit">Login</button>
+    </form>

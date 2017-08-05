@@ -1,0 +1,23 @@
+{% if todoitems %}
+    <h1 style="color:red" > Items of {{ listname }} List :</h1>
+    <table border="2px">
+            <tr>
+            <th>Description</th>
+            <th>Due By</th>
+            <th>Completed</th>
+            </tr>
+    {% for i in todoitems  %}
+
+           <tr>
+              <td><b> {{ i.description }} </b>      </td>
+
+             <td>  <b> {{ i.due_by }} </b></td>
+
+              <td><b> {{ i.completed }} </b></td>
+           </tr>
+
+
+    {% endfor %}</table>
+{% else %}
+    <h2>No items found in list {{ listname }}</h2>
+{% endif %}
